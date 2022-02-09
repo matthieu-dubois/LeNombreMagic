@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:views="clr-namespace:nombremagique.Views"
+    x:Class="nombremagique.Views.GamePage">
+	<ContentPage.Content>
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+
+          <views:StarsView Grid.Row="0" Grid.Column="0"/>
+
+            <BoxView  Grid.Row="2" Grid.Column="0"
+                Margin="-20,0,-20,-35"
+                HeightRequest="120"
+            Rotation="-10" 
+            Color="{StaticResource shadowColor}" />            
+
+            
+            <StackLayout Grid.Row="1" Grid.Column="0" VerticalOptions="Center">
+                <Label Text="Devinez le" 
+                    TextColor="{StaticResource titleColor}"
+                    HorizontalOptions="Center" 
+                    FontSize="30"/>
+                <Label Text="Nombre magique" 
+                    TextColor="{StaticResource titleColor}"
+                    HorizontalOptions="Center" 
+                    FontSize="30"/>
+                <Label Text="Entre x et x" 
+                    TextColor="{StaticResource titleColor}"
+                    x:Name="minMaxLabel"
+                    HorizontalOptions="Center" 
+                    FontAttributes="Italic"
+                    FontSize="20"/>     
+
+                <Entry Placeholder="?" 
+                    BackgroundColor="{StaticResource shadowColor}"
+                    Margin="0,30,0,0"
+                    TextColor="White"
+                    PlaceholderColor="White"
+                    x:Name="numberEntry"
+                    Keyboard="Numeric"
+                    FontSize="80" 
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    WidthRequest="120"
+                />
+
+                <Button Text="DEVINER" 
+                    BackgroundColor="{StaticResource shadowColor}"
+                    Clicked="ButtonClick" 
+                    HorizontalOptions="Center"
+                    WidthRequest="120"
+                    TextColor="White" />
+            </StackLayout>
+        </Grid>    
+	</ContentPage.Content>
+</ContentPage>
